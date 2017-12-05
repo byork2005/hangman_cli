@@ -1,8 +1,8 @@
 
 var brokenWord = function(letter) {
     this.letter = letter,
-    this.guessed = guessed,
-    this.show = show
+    this.guessed = false,
+    this.show = "_"
 }
 
 // var brokenWord = [
