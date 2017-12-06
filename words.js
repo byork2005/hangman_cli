@@ -1,10 +1,15 @@
-var brokenWord = require("./brokenWord.js");
+var letters = require("./letters.js");
 
-var newWord = function(word) {
-	this.letters = [];
-    var letters = this.word.split("");
-    for (var i = 0; i < letters.length; i++)
+var words = function(word) {
+    this.word = word;
+    this.letter = [];
+    this.allLetters = word.split('');
+    
+    for (var i = 0; i < this.allLetters.length; i++)
     {
-        this.letters.push( new brokenWord(letter[i]));
+        this.letter.push( new letters(this.allLetters[i]));
     }
 }
+
+module.exports = words;
+
