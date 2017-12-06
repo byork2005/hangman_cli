@@ -22,7 +22,7 @@ function restart()
     inquirer.prompt([
         {
             type: "confirm",
-            message: "Do you want to play hangman? ",
+            message: "Do you want to play medieval hangman? ",
             name: "newGame"
         }
     ]).then(function(answer)
@@ -66,11 +66,11 @@ function askForGuess() {
            if (alphabet.indexOf(answer.guess) === -1)
            {
                console.log("Select a valid letter!")
-               askForGuess();
-           } else if (wrongguesses.indexOf(answer.guess) != -1)
+               displayText();
+           } else if (wrongguesses.indexOf(" " + answer.guess) != -1)
            {
                console.log("You have already guessed that letter!")
-               askForGuess();
+               displayText();
            } else
            {
                logic(answer.guess);
@@ -82,7 +82,7 @@ function logic(input) {
     if(currentWord.allLetters.indexOf(input) === -1)
     {  
         tries--;
-        wrongguesses.push(input + " ");
+        wrongguesses.push(" " + input);
         displayText()
     } else 
     {
